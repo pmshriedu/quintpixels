@@ -4,7 +4,7 @@ import { BackHomeLink } from "@/components/BackHomeLink";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contact — We Are The Pixels",
+  title: "Contact — Quint Pixels",
   description: "Start a conversation. Tell us about your next project.",
 };
 

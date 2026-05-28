@@ -1,5 +1,5 @@
 /**
- * db/seed.ts — Seed the WE ARE THE PIXELS database with initial content.
+ * db/seed.ts — Seed the QUINT PIXELS database with initial content.
  * Run with: npm run db:seed
  */
 
@@ -332,7 +332,7 @@ async function seed() {
       company: "Nexus Labs",
       role: "CEO & Co-Founder",
       testimonial:
-        "We Are The Pixels didn't just build our product — they reimagined how our users would experience it. The result was a 40% reduction in churn and a design that our customers consistently describe as 'unlike anything else in the space.'",
+        "Quint Pixels didn't just build our product — they reimagined how our users would experience it. The result was a 40% reduction in churn and a design that our customers consistently describe as 'unlike anything else in the space.'",
       featured: true,
       order: 0,
     },

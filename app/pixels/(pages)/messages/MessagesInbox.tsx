@@ -326,7 +326,7 @@ export function MessagesInbox({
             {/* Reply button */}
             <div className="mt-8">
               <a
-                href={`mailto:${selected.email}?subject=Re: Your message to We Are The Pixels`}
+                href={`mailto:${selected.email}?subject=Re: Your message to Quint Pixels`}
                 className="inline-flex items-center gap-2 px-4 py-2.5 bg-[#0b0b0a] text-[#f7f5f2] font-pixel text-[8px] tracking-widest uppercase rounded-sm hover:bg-[#2a2826] transition-colors"
               >
                 REPLY VIA EMAIL

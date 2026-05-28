@@ -180,7 +180,7 @@
 
 /* Display sizes — fluid scaling */
 .text-display-2xl {
-  font-size: clamp(4rem, 14vw, 18rem);
+  font-size: clamp(2.5rem, 13vw, 18rem);
   line-height: 0.9;
   letter-spacing: -0.04em;
 }

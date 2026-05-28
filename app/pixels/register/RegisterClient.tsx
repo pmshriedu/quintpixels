@@ -45,7 +45,7 @@ export default function RegisterClient() {
               <span className="font-pixel text-[9px] text-[#f7f5f2]">PX</span>
             </div>
             <span className="font-pixel text-[10px] tracking-widest text-white/60 uppercase">
-              WE ARE THE PIXELS
+              QUINT PIXELS
             </span>
           </div>
         </div>
@@ -60,7 +60,7 @@ export default function RegisterClient() {
             <span className="text-white/30">SYSTEM</span>
           </h1>
           <p className="font-mono text-[11px] text-white/25 leading-relaxed max-w-xs">
-            Create your admin account and start managing the We Are The Pixels
+            Create your admin account and start managing the Quint Pixels
             platform.
           </p>
         </div>

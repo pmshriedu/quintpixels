@@ -76,7 +76,7 @@ export default function LoginPage() {
               <span className="font-pixel text-[9px] text-[#f7f5f2]">PX</span>
             </div>
             <span className="font-pixel text-[10px] tracking-widest text-white/60 uppercase">
-              WE ARE THE PIXELS
+              QUINT PIXELS
             </span>
           </div>
         </div>

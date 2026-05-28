@@ -116,10 +116,10 @@ export function StorytellingSection() {
             ref={(el) => {
               if (el) wordRefs.current[i] = el;
             }}
-            className="absolute inset-0 flex items-center justify-center"
+            className="absolute inset-0 flex items-center justify-center px-6 md:px-16"
             aria-hidden={i !== 0}
           >
-            <span className="font-pixel text-display-2xl text-white leading-none text-center select-none tracking-tight">
+            <span className="font-pixel text-display-2xl text-white leading-none text-center select-none tracking-tight w-full max-w-full">
               {word}
             </span>
           </div>

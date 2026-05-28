@@ -231,7 +231,7 @@ export function FormsInbox({
             </div>
             <div className="mt-8">
               <a
-                href={`mailto:${selected.email}?subject=Re: Your Project Brief — We Are The Pixels`}
+                href={`mailto:${selected.email}?subject=Re: Your Project Brief — Quint Pixels`}
                 className="inline-flex items-center gap-2 px-4 py-2.5 bg-white text-black font-pixel text-[8px] tracking-widest uppercase rounded-sm hover:bg-white/90 transition-colors"
               >
                 REPLY VIA EMAIL

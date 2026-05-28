@@ -19,13 +19,13 @@ export function AdminHeader({ title, subtitle }: AdminHeaderProps) {
   };
 
   return (
-    <header className="flex items-center justify-between px-6 py-4 border-b border-white/5 bg-[#0d0c0b]">
+    <header className="flex items-center justify-between px-6 py-4 border-b border-black/8 bg-[#f7f5f2]">
       <div>
-        <h1 className="font-pixel text-[13px] tracking-widest text-white/90 uppercase">
+        <h1 className="font-pixel text-[14px] tracking-widest text-[#0b0b0a] uppercase">
           {title}
         </h1>
         {subtitle && (
-          <p className="font-mono text-[10px] text-white/30 mt-0.5 uppercase tracking-wider">
+          <p className="font-mono text-[11px] text-[#0b0b0a]/50 mt-0.5 uppercase tracking-wider">
             {subtitle}
           </p>
         )}
@@ -34,9 +34,9 @@ export function AdminHeader({ title, subtitle }: AdminHeaderProps) {
       <button
         onClick={handleLogout}
         disabled={pending}
-        className="flex items-center gap-2 px-3 py-1.5 text-white/30 hover:text-white/70 transition-colors rounded-sm hover:bg-white/5 group"
+        className="flex items-center gap-2 px-3 py-1.5 text-[#0b0b0a]/40 hover:text-[#0b0b0a]/80 transition-colors rounded-sm hover:bg-black/5 group"
       >
-        <span className="font-pixel text-[8px] tracking-widest uppercase hidden sm:block group-hover:text-white/50">
+        <span className="font-pixel text-[8px] tracking-widest uppercase hidden sm:block group-hover:text-[#0b0b0a]/70">
           LOGOUT
         </span>
         <LogOut size={13} />

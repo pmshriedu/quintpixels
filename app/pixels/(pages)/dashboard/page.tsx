@@ -59,7 +59,7 @@ export default async function DashboardPage() {
       <div className="p-6 space-y-8">
         {/* Stats */}
         <div>
-          <div className="font-pixel text-[8px] tracking-[0.3em] text-white/20 uppercase mb-4">
+          <div className="font-pixel text-[8px] tracking-[0.3em] text-[#0b0b0a]/40 uppercase mb-4">
             OVERVIEW
           </div>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
@@ -89,7 +89,7 @@ export default async function DashboardPage() {
 
         {/* Inbox preview */}
         <div>
-          <div className="font-pixel text-[8px] tracking-[0.3em] text-white/20 uppercase mb-4">
+          <div className="font-pixel text-[8px] tracking-[0.3em] text-[#0b0b0a]/40 uppercase mb-4">
             INBOX SUMMARY
           </div>
           <div className="grid grid-cols-2 gap-3">
@@ -108,7 +108,7 @@ export default async function DashboardPage() {
 
         {/* Quick Actions */}
         <div>
-          <div className="font-pixel text-[8px] tracking-[0.3em] text-white/20 uppercase mb-4">
+          <div className="font-pixel text-[8px] tracking-[0.3em] text-[#0b0b0a]/40 uppercase mb-4">
             QUICK ACTIONS
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
@@ -116,19 +116,19 @@ export default async function DashboardPage() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="group flex items-center justify-between px-4 py-4 bg-white/3 border border-white/5 rounded-sm hover:bg-white/5 hover:border-white/10 transition-all"
+                className="group flex items-center justify-between px-4 py-4 bg-black/3 border border-black/6 rounded-sm hover:bg-black/5 hover:border-black/10 transition-all"
               >
                 <div>
-                  <div className="font-pixel text-[9px] tracking-widest text-white/70 uppercase group-hover:text-white transition-colors">
+                  <div className="font-pixel text-[10px] tracking-widest text-[#0b0b0a]/70 uppercase group-hover:text-[#0b0b0a] transition-colors">
                     {link.label}
                   </div>
-                  <div className="font-mono text-[9px] text-white/25 mt-0.5">
+                  <div className="font-mono text-[9px] text-[#0b0b0a]/45 mt-0.5">
                     {link.desc}
                   </div>
                 </div>
                 <ArrowRight
                   size={13}
-                  className="text-white/20 group-hover:text-white/50 group-hover:translate-x-0.5 transition-all"
+                  className="text-[#0b0b0a]/25 group-hover:text-[#0b0b0a]/60 group-hover:translate-x-0.5 transition-all"
                 />
               </Link>
             ))}
@@ -136,12 +136,12 @@ export default async function DashboardPage() {
         </div>
 
         {/* System status */}
-        <div className="flex items-center gap-3 pt-4 border-t border-white/5">
-          <div className="w-1.5 h-1.5 rounded-full bg-white/30 animate-pulse" />
-          <span className="font-mono text-[9px] text-white/20 uppercase tracking-widest">
+        <div className="flex items-center gap-3 pt-4 border-t border-black/6">
+          <div className="w-1.5 h-1.5 rounded-full bg-[#0b0b0a]/30 animate-pulse" />
+          <span className="font-mono text-[9px] text-[#0b0b0a]/40 uppercase tracking-widest">
             CMS SYSTEM OPERATIONAL
           </span>
-          <span className="font-mono text-[9px] text-white/10 ml-auto uppercase">
+          <span className="font-mono text-[9px] text-[#0b0b0a]/25 ml-auto uppercase">
             {new Date().toLocaleDateString("en-US", {
               year: "numeric",
               month: "short",

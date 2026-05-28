@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Image from "next/image";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { animateHeroEntrance } from "@/lib/animations/hero";
@@ -73,6 +74,7 @@ export function HeroSection({
   const heroRef = useRef<HTMLElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const logoImgRef = useRef<HTMLDivElement>(null);
   const pixelsRef = useRef<PixelCell[]>([]);
 
   useEffect(() => {
@@ -168,6 +170,26 @@ export function HeroSection({
     };
   }, []);
 
+  const handleLogoEnter = () => {
+    if (!logoImgRef.current) return;
+    gsap.to(logoImgRef.current, {
+      rotation: 360,
+      duration: 0.7,
+      ease: "power2.inOut",
+      overwrite: "auto",
+    });
+  };
+
+  const handleLogoLeave = () => {
+    if (!logoImgRef.current) return;
+    gsap.to(logoImgRef.current, {
+      rotation: 0,
+      duration: 0.5,
+      ease: "power2.inOut",
+      overwrite: "auto",
+    });
+  };
+
   return (
     <section
       ref={heroRef}
@@ -218,15 +240,35 @@ export function HeroSection({
           Creative Technology Studio — Est. 2024
         </div>
 
-        <div className="overflow-hidden">
-          <h1
-            data-hero-top
-            className="font-pixel text-hero-label text-(--pix-gray) leading-none select-none"
+        {/* QUINT + logo at end */}
+        <div className="flex items-center gap-3 sm:gap-4 md:gap-5 mb-2">
+          <div className="overflow-hidden">
+            <h1
+              data-hero-top
+              className="font-pixel text-hero-label text-(--pix-gray) leading-none select-none"
+            >
+              QUINT
+            </h1>
+          </div>
+          <div
+            ref={logoImgRef}
+            onMouseEnter={handleLogoEnter}
+            onMouseLeave={handleLogoLeave}
+            className="shrink-0 cursor-pointer"
+            style={{ width: "clamp(1.4rem, 4.6vw, 6rem)", height: "clamp(1.4rem, 4.6vw, 6rem)" }}
           >
-            WE ARE THE
-          </h1>
+            <Image
+              src="/big-logo.png"
+              alt="Quint Pixels logo"
+              width={56}
+              height={56}
+              className="w-full h-full object-contain select-none"
+              priority
+            />
+          </div>
         </div>
 
+        {/* PIXELS */}
         <div className="overflow-hidden">
           <div
             data-hero-main
@@ -236,7 +278,7 @@ export function HeroSection({
           </div>
         </div>
 
-        <div className="mt-10 max-w-lg">
+        <div className="mt-10 max-w-lg md:max-w-xl">
           <p
             data-hero-sub
             className="font-sans text-base md:text-lg text-(--pix-gray) leading-relaxed"
@@ -268,25 +310,14 @@ export function HeroSection({
           </a>
         </div>
 
-        <div className="mt-20 pb-10 flex items-end justify-between">
+        <div className="mt-20 pb-10">
           <div className="font-mono text-[10px] tracking-[0.2em] uppercase text-(--pix-gray-light)">
             Scroll to explore
-          </div>
-          <div className="font-mono text-[10px] tracking-[0.2em] uppercase text-(--pix-gray-light)">
-            Web · Mobile · AI · Cloud
           </div>
         </div>
       </div>
 
-      {/* Scroll indicator */}
-      <div className="absolute right-8 top-1/2 -translate-y-1/2 flex flex-col items-center gap-3 opacity-30 z-10">
-        <span className="font-mono text-[9px] tracking-[0.3em] uppercase rotate-90 origin-center mb-4">
-          Scroll
-        </span>
-        <div className="w-px h-16 bg-(--pix-black) relative overflow-hidden">
-          <div className="absolute inset-x-0 top-0 h-1/3 bg-(--pix-black) animate-[slideDown_1.8s_ease-in-out_infinite]" />
-        </div>
-      </div>
+
     </section>
   );
 }

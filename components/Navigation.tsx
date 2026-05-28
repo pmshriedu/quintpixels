@@ -300,7 +300,7 @@ export function Navigation() {
             onClick={handleClose}
             className="font-mono text-[9px] sm:text-[10px] tracking-[0.22em] uppercase text-(--pix-gray) hover:text-(--pix-black) transition-colors duration-300"
           >
-            WE ARE THE PIXELS
+            QUINT PIXELS
           </Link>
           <div
             data-nav-divider
@@ -437,7 +437,7 @@ export function Navigation() {
             className="mt-auto pt-7 border-t border-(--pix-border)/55"
           >
             <p className="font-mono text-[8px] tracking-[0.24em] uppercase text-(--pix-gray-light)">
-              © 2026 WE ARE THE PIXELS
+              © 2026 QUINT PIXELS
             </p>
           </div>
         </aside>

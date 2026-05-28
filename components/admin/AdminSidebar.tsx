@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import NextImage from "next/image";
 import { usePathname } from "next/navigation";
 import { gsap } from "gsap";
 import { cn } from "@/lib/utils";
@@ -125,39 +126,39 @@ export function AdminSidebar({
           title={collapsed ? item.label : undefined}
           className={cn(
             "group relative flex items-center gap-3 px-3 py-2.5 rounded-sm transition-all duration-200",
-            "hover:bg-white/5",
+            "hover:bg-black/5",
             isActive
-              ? "bg-white/8 text-white"
-              : "text-white/40 hover:text-white/70",
+              ? "bg-black/6 text-[#0b0b0a]"
+              : "text-[#0b0b0a]/50 hover:text-[#0b0b0a]/80",
           )}
         >
           {/* Active indicator */}
           {isActive && (
-            <span className="absolute left-0 top-1/2 -translate-y-1/2 w-0.5 h-4 bg-white/60 rounded-full" />
+            <span className="absolute left-0 top-1/2 -translate-y-1/2 w-0.5 h-4 bg-[#0b0b0a]/60 rounded-full" />
           )}
 
           <Icon
-            size={15}
+            size={16}
             className={cn(
               "shrink-0 transition-all",
               isActive
-                ? "text-white"
-                : "text-white/40 group-hover:text-white/60",
+                ? "text-[#0b0b0a]"
+                : "text-[#0b0b0a]/45 group-hover:text-[#0b0b0a]/70",
             )}
           />
 
           {!collapsed && (
             <span
               className={cn(
-                "font-pixel text-[9px] tracking-widest uppercase whitespace-nowrap transition-all duration-200",
+                "font-pixel text-[10px] tracking-widest uppercase whitespace-nowrap transition-all duration-200",
                 isActive
-                  ? "text-white"
-                  : "text-white/40 group-hover:text-white/70",
+                  ? "text-[#0b0b0a]"
+                  : "text-[#0b0b0a]/55 group-hover:text-[#0b0b0a]/80",
               )}
             >
               {item.label}
               {item.href === "/pixels/messages" && unreadCount > 0 && (
-                <span className="ml-2 inline-flex items-center justify-center w-4 h-4 rounded-full bg-white/15 font-mono text-[8px] text-white">
+                <span className="ml-2 inline-flex items-center justify-center w-4 h-4 rounded-full bg-black/10 font-mono text-[8px] text-[#0b0b0a]">
                   {unreadCount > 9 ? "9+" : unreadCount}
                 </span>
               )}
@@ -172,21 +173,23 @@ export function AdminSidebar({
       {/* Logo / Brand */}
       <div
         className={cn(
-          "flex items-center gap-3 px-4 py-5 border-b border-white/5",
+          "flex items-center gap-3 px-4 py-5 border-b border-black/6",
           collapsed && "justify-center px-0",
         )}
       >
-        <div className="w-7 h-7 bg-[#0b0b0a] rounded-sm flex items-center justify-center shrink-0">
-          <span className="font-pixel text-[8px] text-[#f7f5f2] leading-none">
-            PX
-          </span>
-        </div>
+        <NextImage
+          src="/black-logo.png"
+          alt="Quint Pixels"
+          width={28}
+          height={28}
+          className="w-7 h-7 object-contain shrink-0"
+        />
         {!collapsed && (
           <div>
-            <div className="font-pixel text-[9px] tracking-widest text-white uppercase">
-              PIXELS
+            <div className="font-pixel text-[10px] tracking-widest text-[#0b0b0a] uppercase">
+              QUINT PIXELS
             </div>
-            <div className="font-mono text-[8px] text-white/30 uppercase tracking-wider">
+            <div className="font-mono text-[8px] text-[#0b0b0a]/40 uppercase tracking-wider">
               CMS
             </div>
           </div>
@@ -203,12 +206,12 @@ export function AdminSidebar({
           <div key={section}>
             {!collapsed && (
               <div className="px-3 mb-2">
-                <span className="font-pixel text-[7px] tracking-[0.3em] text-white/20 uppercase">
+                <span className="font-pixel text-[8px] tracking-[0.3em] text-[#0b0b0a]/35 uppercase">
                   {section}
                 </span>
               </div>
             )}
-            {collapsed && <div className="h-px bg-white/5 mx-2 mb-2" />}
+            {collapsed && <div className="h-px bg-black/8 mx-2 mb-2" />}
             {renderItems(section)}
           </div>
         ))}
@@ -221,13 +224,13 @@ export function AdminSidebar({
           target="_blank"
           rel="noopener noreferrer"
           className={cn(
-            "flex items-center gap-2 px-3 py-2 rounded-sm border border-white/6 bg-white/3 hover:bg-white/6 hover:border-white/12 text-white/35 hover:text-white/60 transition-all",
+            "flex items-center gap-2 px-3 py-2 rounded-sm border border-black/8 bg-black/3 hover:bg-black/6 hover:border-black/14 text-[#0b0b0a]/45 hover:text-[#0b0b0a]/80 transition-all",
             collapsed && "justify-center px-0",
           )}
         >
           <ExternalLink size={12} className="shrink-0" />
           {!collapsed && (
-            <span className="font-pixel text-[7px] tracking-widest uppercase">
+            <span className="font-pixel text-[8px] tracking-widest uppercase">
               VISIT SITE
             </span>
           )}
@@ -235,24 +238,24 @@ export function AdminSidebar({
       </div>
 
       {/* Admin profile */}
-      <div className="border-t border-white/5 p-3">
+      <div className="border-t border-black/6 p-3">
         <div
           className={cn(
             "flex items-center gap-3",
             collapsed && "justify-center",
           )}
         >
-          <div className="w-7 h-7 rounded-full bg-white/10 flex items-center justify-center shrink-0">
-            <span className="font-pixel text-[8px] text-white/70">
+          <div className="w-7 h-7 rounded-full bg-black/8 flex items-center justify-center shrink-0">
+            <span className="font-pixel text-[8px] text-[#0b0b0a]/70">
               {adminName.slice(0, 2).toUpperCase()}
             </span>
           </div>
           {!collapsed && (
             <div className="min-w-0">
-              <div className="font-sans text-[11px] text-white/70 truncate">
+              <div className="font-sans text-[12px] text-[#0b0b0a]/80 truncate font-medium">
                 {adminName}
               </div>
-              <div className="font-pixel text-[7px] text-white/30 uppercase tracking-widest">
+              <div className="font-pixel text-[8px] text-[#0b0b0a]/40 uppercase tracking-widest">
                 {adminRole}
               </div>
             </div>
@@ -269,7 +272,7 @@ export function AdminSidebar({
         ref={sidebarRef}
         style={{ width: 240 }}
         className={cn(
-          "hidden lg:flex flex-col h-screen sticky top-0 bg-[#0b0b0a] border-r border-white/5 shrink-0 overflow-hidden z-40",
+          "hidden lg:flex flex-col h-screen sticky top-0 bg-[#f7f5f2] border-r border-black/8 shrink-0 overflow-hidden z-40",
           "transition-none", // GSAP handles width
         )}
       >
@@ -278,7 +281,7 @@ export function AdminSidebar({
           onClick={() => setCollapsed((p) => !p)}
           className={cn(
             "absolute top-5 z-10 w-5 h-5 flex items-center justify-center rounded-full",
-            "bg-white/5 hover:bg-white/10 text-white/40 hover:text-white/70 transition-colors",
+            "bg-black/5 hover:bg-black/10 text-[#0b0b0a]/40 hover:text-[#0b0b0a]/70 transition-colors",
             collapsed ? "right-3.5" : "right-3",
           )}
         >
@@ -297,7 +300,7 @@ export function AdminSidebar({
       {/* Mobile hamburger */}
       <button
         onClick={() => setMobileOpen(true)}
-        className="lg:hidden fixed top-4 left-4 z-50 w-9 h-9 flex items-center justify-center rounded-sm bg-[#0b0b0a] border border-white/10 text-white/60 hover:text-white"
+        className="lg:hidden fixed top-4 left-4 z-50 w-9 h-9 flex items-center justify-center rounded-sm bg-[#f7f5f2] border border-black/10 text-[#0b0b0a]/60 hover:text-[#0b0b0a]"
       >
         <Menu size={16} />
       </button>
@@ -306,13 +309,13 @@ export function AdminSidebar({
       {mobileOpen && (
         <div className="lg:hidden fixed inset-0 z-50 flex">
           <div
-            className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+            className="absolute inset-0 bg-black/30 backdrop-blur-sm"
             onClick={() => setMobileOpen(false)}
           />
-          <div className="relative w-64 h-full bg-[#0b0b0a] border-r border-white/5 flex flex-col">
+          <div className="relative w-64 h-full bg-[#f7f5f2] border-r border-black/8 flex flex-col">
             <button
               onClick={() => setMobileOpen(false)}
-              className="absolute top-4 right-4 w-7 h-7 flex items-center justify-center text-white/40 hover:text-white"
+              className="absolute top-4 right-4 w-7 h-7 flex items-center justify-center text-[#0b0b0a]/40 hover:text-[#0b0b0a]"
             >
               <X size={14} />
             </button>

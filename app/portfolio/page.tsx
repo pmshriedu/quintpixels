@@ -5,7 +5,7 @@ import { BackHomeLink } from "@/components/BackHomeLink";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Portfolio — We Are The Pixels",
+  title: "Portfolio — Quint Pixels",
   description:
     "Selected work across SaaS platforms, enterprise systems, mobile apps, and AI products.",
 };

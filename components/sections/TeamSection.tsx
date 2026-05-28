@@ -87,7 +87,8 @@ export function TeamSection({ members }: TeamSectionProps) {
         section.querySelectorAll("[data-member-panel]"),
       );
       const railRows = Array.from(section.querySelectorAll("[data-rail-row]"));
-      const N = MEMBERS.length;
+      const N = memberPanels.length;
+      if (N === 0) return;
 
       // ── Initial state ──────────────────────────────────────────────
       memberPanels.forEach((panel, i) => {
@@ -140,10 +141,10 @@ export function TeamSection({ members }: TeamSectionProps) {
       // ── Transition function ────────────────────────────────────────
       const transitionTo = (next: number, prev: number) => {
         if (next === prev) return;
+        const prevPanel = memberPanels[prev] as HTMLElement | undefined;
+        const nextPanel = memberPanels[next] as HTMLElement | undefined;
+        if (!prevPanel || !nextPanel) return;
         const dir = next > prev ? 1 : -1;
-
-        const prevPanel = memberPanels[prev] as HTMLElement;
-        const nextPanel = memberPanels[next] as HTMLElement;
 
         const prevImg = prevPanel.querySelector("[data-panel-img]");
         const prevFN = prevPanel.querySelector("[data-panel-firstname]");
@@ -542,7 +543,7 @@ export function TeamSection({ members }: TeamSectionProps) {
           ))}
         </div>
         <span className="font-mono text-[8px] tracking-[0.3em] uppercase text-white/18">
-          We Are The Pixels
+          Quint Pixels
         </span>
       </footer>
     </section>

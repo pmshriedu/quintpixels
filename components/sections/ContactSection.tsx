@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState, useTransition } from "react";
+import Image from "next/image";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { revealChars } from "@/lib/animations/textReveal";
@@ -126,10 +127,10 @@ export function ContactSection() {
               <div className="flex items-center gap-4">
                 <Mail size={16} strokeWidth={1} className="text-white/30" />
                 <a
-                  href="mailto:hello@wearethepixels.com"
+                  href="mailto:hello@quintpixels.com"
                   className="font-mono text-xs tracking-wider text-white/60 hover:text-white transition-colors duration-300"
                 >
-                  hello@wearethepixels.com
+                  hello@quintpixels.com
                 </a>
               </div>
               <div className="flex items-center gap-4">
@@ -145,7 +146,7 @@ export function ContactSection() {
           <div>
             <a
               ref={ctaRef}
-              href="mailto:hello@wearethepixels.com"
+              href="mailto:hello@quintpixels.com"
               className="group inline-flex items-center gap-3 font-mono text-xs tracking-[0.15em] uppercase border border-white/20 px-8 py-4 text-white hover:border-white hover:bg-white hover:text-(--pix-black) transition-all duration-400"
             >
               Send a Message
@@ -245,9 +246,12 @@ export function ContactSection() {
 
       {/* Footer line */}
       <div className="relative z-10 mt-24 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between gap-4">
-        <span className="font-mono text-[10px] tracking-[0.2em] uppercase text-white/20">
-          © 2025 WE ARE THE PIXELS — Creative Technology Studio
-        </span>
+        <div className="flex items-center gap-3">
+          <Image src="/white-logo.png" alt="Quint Pixels" width={20} height={20} className="w-5 h-5 object-contain opacity-30" />
+          <span className="font-mono text-[10px] tracking-[0.2em] uppercase text-white/20">
+            © 2026 QUINT PIXELS — Creative Technology Studio
+          </span>
+        </div>
         <div className="flex gap-6">
           {["Twitter/X", "LinkedIn", "GitHub", "Dribbble"].map((link) => (
             <span

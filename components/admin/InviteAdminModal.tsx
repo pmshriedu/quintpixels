@@ -95,7 +95,7 @@ export function InviteAdminModal({ onCreated }: { onCreated?: () => void }) {
                     name="email"
                     type="email"
                     required
-                    placeholder="admin@wearethepixels.com"
+                    placeholder="admin@quintpixels.com"
                     className="w-full bg-white/5 border border-white/10 focus:border-white/30 rounded-sm px-3 py-2.5 font-mono text-[12px] text-white placeholder:text-white/20 outline-none transition-colors"
                   />
                   {state?.errors?.email && (

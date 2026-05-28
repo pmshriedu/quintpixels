@@ -76,7 +76,7 @@ export function SeoEditor({
           <input
             name="title"
             defaultValue={current?.title ?? ""}
-            placeholder={`${activePage.charAt(0).toUpperCase() + activePage.slice(1)} — We Are The Pixels`}
+            placeholder={`${activePage.charAt(0).toUpperCase() + activePage.slice(1)} — Quint Pixels`}
             className="w-full bg-white/3 border border-white/8 rounded-sm px-4 py-3 font-mono text-[11px] text-white placeholder-white/15 focus:outline-none focus:border-white/20 transition-colors"
           />
         </div>

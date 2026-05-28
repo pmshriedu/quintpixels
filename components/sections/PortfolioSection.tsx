@@ -71,6 +71,13 @@ interface PortfolioSectionProps {
   projects?: ProjectItem[];
 }
 
+function isDarkColor(hex: string): boolean {
+  const r = parseInt(hex.slice(1, 3), 16);
+  const g = parseInt(hex.slice(3, 5), 16);
+  const b = parseInt(hex.slice(5, 7), 16);
+  return (0.299 * r + 0.587 * g + 0.114 * b) / 255 < 0.5;
+}
+
 export function PortfolioSection({ projects }: PortfolioSectionProps) {
   const displayProjects = projects && projects.length > 0 ? projects : PROJECTS;
   const sectionRef = useRef<HTMLElement>(null);
@@ -143,64 +150,67 @@ export function PortfolioSection({ projects }: PortfolioSectionProps) {
           style={{ width: "max-content", alignItems: "center" }}
         >
           {displayProjects.map(
-            ({ index, category, title, sub, tags, year, color }) => (
-              <div
-                key={index}
-                data-portfolio-card
-                className="group relative flex-shrink-0 w-[80vw] md:w-[50vw] lg:w-[38vw] h-[55vh] border border-(--pix-border) overflow-hidden cursor-pointer"
-                style={{ backgroundColor: color }}
-              >
-                {/* Card content */}
-                <div className="absolute inset-0 p-8 md:p-10 flex flex-col justify-between">
-                  <div className="flex items-start justify-between">
-                    <div>
-                      <span className="font-mono text-[10px] tracking-[0.2em] uppercase text-(--pix-gray)">
-                        {category}
+            ({ index, category, title, sub, tags, year, color }) => {
+              const dark = isDarkColor(color);
+              return (
+                <div
+                  key={index}
+                  data-portfolio-card
+                  className={`group relative flex-shrink-0 w-[80vw] md:w-[50vw] lg:w-[38vw] h-[55vh] overflow-hidden cursor-pointer border ${dark ? "border-white/10" : "border-(--pix-border)"}`}
+                  style={{ backgroundColor: color }}
+                >
+                  {/* Card content */}
+                  <div className="absolute inset-0 p-8 md:p-10 flex flex-col justify-between">
+                    <div className="flex items-start justify-between">
+                      <div>
+                        <span className={`font-mono text-[10px] tracking-[0.2em] uppercase ${dark ? "text-white/50" : "text-(--pix-gray)"}`}>
+                          {category}
+                        </span>
+                        <div className={`font-mono text-[10px] tracking-[0.15em] mt-1 ${dark ? "text-white/30" : "text-(--pix-gray-light)"}`}>
+                          {year}
+                        </div>
+                      </div>
+                      <span className={`font-mono text-[11px] tracking-[0.15em] ${dark ? "text-white/30" : "text-(--pix-gray-light)"}`}>
+                        {index}
                       </span>
-                      <div className="font-mono text-[10px] tracking-[0.15em] text-(--pix-gray-light) mt-1">
-                        {year}
+                    </div>
+
+                    <div>
+                      <div className="overflow-hidden mb-3">
+                        <h3 className={`font-pixel text-display-md leading-none group-hover:opacity-70 transition-opacity duration-400 ${dark ? "text-white" : "text-(--pix-black)"}`}>
+                          {title}
+                        </h3>
+                      </div>
+                      <p className={`font-sans text-sm mb-6 leading-relaxed ${dark ? "text-white/50" : "text-(--pix-gray)"}`}>
+                        {sub}
+                      </p>
+                      <div className="flex gap-2 flex-wrap">
+                        {tags.map((tag) => (
+                          <span
+                            key={tag}
+                            className={`font-mono text-[9px] tracking-[0.12em] uppercase px-2 py-1 border ${dark ? "text-white/40 border-white/15" : "text-(--pix-gray) border-(--pix-border)"}`}
+                          >
+                            {tag}
+                          </span>
+                        ))}
                       </div>
                     </div>
-                    <span className="font-mono text-[11px] tracking-[0.15em] text-(--pix-gray-light)">
-                      {index}
-                    </span>
                   </div>
 
-                  <div>
-                    <div className="overflow-hidden mb-3">
-                      <h3 className="font-pixel text-display-md text-(--pix-black) leading-none group-hover:opacity-70 transition-opacity duration-400">
-                        {title}
-                      </h3>
-                    </div>
-                    <p className="font-sans text-sm text-(--pix-gray) mb-6 leading-relaxed">
-                      {sub}
-                    </p>
-                    <div className="flex gap-2 flex-wrap">
-                      {tags.map((tag) => (
-                        <span
-                          key={tag}
-                          className="font-mono text-[9px] tracking-[0.12em] uppercase text-(--pix-gray) border border-(--pix-border) px-2 py-1"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
+                  {/* Hover arrow */}
+                  <div className="absolute top-6 right-6 opacity-0 group-hover:opacity-100 transition-all duration-300 -translate-y-2 group-hover:translate-y-0">
+                    <ArrowUpRight
+                      size={20}
+                      strokeWidth={1.5}
+                      className={dark ? "text-white" : "text-(--pix-black)"}
+                    />
                   </div>
-                </div>
 
-                {/* Hover arrow */}
-                <div className="absolute top-6 right-6 opacity-0 group-hover:opacity-100 transition-all duration-300 -translate-y-2 group-hover:translate-y-0">
-                  <ArrowUpRight
-                    size={20}
-                    strokeWidth={1.5}
-                    className="text-(--pix-black)"
-                  />
+                  {/* Bottom border reveal */}
+                  <div className={`absolute bottom-0 left-0 right-0 h-px scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left ${dark ? "bg-white" : "bg-(--pix-black)"}`} />
                 </div>
-
-                {/* Bottom border reveal */}
-                <div className="absolute bottom-0 left-0 right-0 h-px bg-(--pix-black) scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
-              </div>
-            ),
+              );
+            },
           )}
         </div>
       </div>

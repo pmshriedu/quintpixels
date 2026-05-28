@@ -173,7 +173,7 @@ export function ServicesSection({ services }: ServicesSectionProps) {
       <div className="overflow-hidden mb-20">
         <h2
           ref={headingRef}
-          className="font-pixel text-display-lg text-(--pix-black) leading-none"
+          className="font-pixel text-[2rem] md:text-display-lg text-(--pix-black) leading-none"
         >
           SERVICES
         </h2>
@@ -198,7 +198,7 @@ export function ServicesSection({ services }: ServicesSectionProps) {
 
               {/* Title — col 2 on mobile, col 2 on desktop */}
               <div className="overflow-hidden">
-                <h3 className="font-pixel text-display-sm text-(--pix-black) whitespace-pre-line leading-none group-hover:opacity-70 transition-opacity duration-300">
+                <h3 className="font-pixel text-[1rem] sm:text-[1.25rem] md:text-display-sm text-(--pix-black) whitespace-pre-line leading-none group-hover:opacity-70 transition-opacity duration-300">
                   {title}
                 </h3>
               </div>

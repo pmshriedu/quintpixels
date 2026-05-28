@@ -127,7 +127,7 @@ export function NotFoundScene() {
           className="font-mono text-[7px] tracking-[0.4em] text-[#0b0b0a]/9 uppercase"
           style={{ writingMode: "vertical-rl" }}
         >
-          WE ARE THE PIXELS — CREATIVE TECHNOLOGY STUDIO — EST. 2024
+          QUINT PIXELS — CREATIVE TECHNOLOGY STUDIO — EST. 2024
         </span>
       </div>
 
@@ -139,7 +139,7 @@ export function NotFoundScene() {
         <Link href="/" className="group flex items-center gap-3">
           <span className="block w-1.5 h-1.5 bg-[#0b0b0a]/25 group-hover:bg-[#0b0b0a]/60 transition-colors duration-300" />
           <span className="font-pixel text-[7px] tracking-[0.38em] uppercase text-[#0b0b0a]/35 group-hover:text-[#0b0b0a]/65 transition-colors duration-300">
-            WE ARE THE PIXELS
+            QUINT PIXELS
           </span>
         </Link>
 
@@ -271,7 +271,7 @@ export function NotFoundScene() {
           data-nf-meta
           className="font-mono text-[8px] tracking-[0.22em] text-[#0b0b0a]/12 uppercase"
         >
-          © {new Date().getFullYear()} WE ARE THE PIXELS
+          © {new Date().getFullYear()} QUINT PIXELS
         </div>
       </footer>
     </div>

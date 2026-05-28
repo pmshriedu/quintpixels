@@ -28,12 +28,12 @@ export default async function SettingsPage() {
                 {
                   key: "company_name",
                   label: "COMPANY NAME",
-                  placeholder: "We Are The Pixels",
+                  placeholder: "Quint Pixels",
                 },
                 {
                   key: "company_email",
                   label: "CONTACT EMAIL",
-                  placeholder: "hello@wearethepixels.com",
+                  placeholder: "hello@quintpixels.com",
                 },
                 {
                   key: "company_phone",
