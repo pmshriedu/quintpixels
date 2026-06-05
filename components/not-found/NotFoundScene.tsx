@@ -127,7 +127,7 @@ export function NotFoundScene() {
           className="font-mono text-[7px] tracking-[0.4em] text-[#0b0b0a]/9 uppercase"
           style={{ writingMode: "vertical-rl" }}
         >
-          QUINT PIXELS — CREATIVE TECHNOLOGY STUDIO — EST. 2024
+          QUINT PIXELS — CREATIVE TECHNOLOGY STUDIO — EST. 2026
         </span>
       </div>
 

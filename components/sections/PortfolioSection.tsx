@@ -16,7 +16,7 @@ const PROJECTS = [
     title: "ORBIS",
     sub: "Team intelligence & workflow OS",
     tags: ["Next.js", "Node.js", "PostgreSQL"],
-    year: "2024",
+    year: "2026",
     color: "#f0ede9",
   },
   {
@@ -25,7 +25,7 @@ const PROJECTS = [
     title: "AXIOM",
     sub: "Multi-tenant enterprise data platform",
     tags: ["Go", "Kubernetes", "Kafka"],
-    year: "2024",
+    year: "2026",
     color: "#e8e4de",
   },
   {
@@ -43,7 +43,7 @@ const PROJECTS = [
     title: "ETHER",
     sub: "Document intelligence & semantic search",
     tags: ["Python", "LangChain", "Pinecone"],
-    year: "2024",
+    year: "2026",
     color: "#ede9e3",
   },
   {

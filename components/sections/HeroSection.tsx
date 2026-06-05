@@ -9,6 +9,8 @@ import { animateHeroEntrance } from "@/lib/animations/hero";
 gsap.registerPlugin(ScrollTrigger);
 
 const PIXEL_SIZE = 44; // px — chunky pixel-art sized blocks
+const PIXEL_SCROLL_DISTANCE = "+=24%";
+const PIXEL_SCROLL_SCRUB = 0.12;
 
 type PixelCell = {
   x: number;
@@ -104,15 +106,15 @@ export function HeroSection({
       animateHeroEntrance(container);
 
       // ── Pixel dispersion scroll effect ────────────────────────────
-      const WAVE_FRAC = 0.07;
+      const WAVE_FRAC = 0.18;
 
       ScrollTrigger.create({
         trigger: hero,
         start: "top top",
-        end: "+=130%",
+        end: PIXEL_SCROLL_DISTANCE,
         pin: true,
         pinSpacing: true,
-        scrub: 1.8,
+        scrub: PIXEL_SCROLL_SCRUB,
         onUpdate(self) {
           const progress = self.progress;
           const cells = pixelsRef.current;
@@ -151,8 +153,8 @@ export function HeroSection({
         scrollTrigger: {
           trigger: hero,
           start: "top top",
-          end: "+=130%",
-          scrub: 1.8,
+          end: PIXEL_SCROLL_DISTANCE,
+          scrub: PIXEL_SCROLL_SCRUB,
         },
       });
     }, hero);
@@ -237,7 +239,7 @@ export function HeroSection({
       >
         <div className="font-mono text-[10px] tracking-[0.3em] uppercase text-(--pix-gray) mb-8 flex items-center gap-3">
           <span className="inline-block w-6 h-px bg-(--pix-gray)" />
-          Creative Technology Studio — Est. 2024
+          Creative Technology Studio — Est. 2026
         </div>
 
         {/* QUINT + logo at end */}
@@ -311,7 +313,7 @@ export function HeroSection({
         </div>
 
         <div className="mt-20 pb-10">
-          <div className="font-mono text-[10px] tracking-[0.2em] uppercase text-(--pix-gray-light)">
+          <div className="font-mono text-[10px] tracking-[0.2em] uppercase text-(--pix-black)">
             Scroll to explore
           </div>
         </div>
